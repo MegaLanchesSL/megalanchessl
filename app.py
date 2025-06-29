@@ -15,7 +15,7 @@ def index():
 
 @app.route('/menu')
 def menu():
-    return render_template('menu.html", cardapio=cardapio)
+    return render_template('menu.html', cardapio=cardapio)
 
 @app.route('/pedido', methods=['POST'])
 def pedido():
