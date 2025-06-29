@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect
+import os
 
 app = Flask(__name__)
 
@@ -22,4 +23,5 @@ def pedido():
     return redirect(f"https://wa.me/554991853581?text=Quero+fazer+um+pedido:+{item}")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
