@@ -1,48 +1,40 @@
+:root {
+    --vermelho: #E63946;     /* Vermelho vibrante */
+    --amarelo: #FFD166;      /* Amarelo dourado */
+    --fundo: #F8F9FA;        /* Cinza claro */
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #111;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+    background-color: var(--fundo);
+    font-family: 'Arial', sans-serif;
 }
-header, nav {
-    background-color: #e60000;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+
+.navbar {
+    background-color: var(--vermelho) !important;
 }
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+
+.btn-primary {
+    background-color: var(--vermelho);
+    border: none;
 }
-.cardapio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+
+.btn-primary:hover {
+    background-color: #D62839; /* Vermelho mais escuro */
 }
-.item {
-    background: #222;
-    border: 1px solid #555;
+
+.card {
+    border: none;
     border-radius: 10px;
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
-.item img {
-    width: 100%;
-    border-radius: 10px;
+
+.card:hover {
+    transform: translateY(-5px);
 }
-.zap {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    height: 180px;
+    object-fit: cover;
 }
