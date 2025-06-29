@@ -1,0 +1,8 @@
+/app.py
+/requirements.txt
+/static/css/style.css
+/static/js/script.js
+/templates/base.html
+/templates/index.html
+/templates/menu.html
+/templates/contato.html
