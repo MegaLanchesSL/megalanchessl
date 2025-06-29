@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mega Lanches São Léo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Mega Lanches São Léo</h1>
+        <p>📍 Rua Gilberto Galhardo, 121 - São Leopoldo/RS</p>
+        <p>📞 (54) 99185-3581</p>
+    </header>
+    <nav>
+        <a href="/">Início</a> | <a href="/menu">Cardápio</a>
+    </nav>
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+    <a class="zap" href="https://wa.me/554991853581?text=Olá,+quero+fazer+um+pedido" target="_blank">💬 Fale conosco</a>
+</body>
+</html>
