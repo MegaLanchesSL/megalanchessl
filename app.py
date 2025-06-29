@@ -1,9 +1,13 @@
 from flask import Flask, render_template
 import os
 
-app = Flask(__name__)
+# Configuração com caminhos absolutos
+base_dir = os.path.abspath(os.path.dirname(__file__))
+app = Flask(__name__,
+            template_folder=os.path.join(base_dir, 'templates'),
+            static_folder=os.path.join(base_dir, 'static'))
 
-# Dados do cardápio (simplificado para exemplo)
+# Dados do cardápio
 cardapio = {
     "lanches": [
         {
@@ -18,7 +22,6 @@ cardapio = {
             "preco": "R$ 22,90",
             "imagem": "bacon.jpg"
         },
-        # Adicione mais itens conforme necessário
     ],
     "bebidas": [
         {
@@ -27,7 +30,6 @@ cardapio = {
             "preco": "R$ 6,00",
             "imagem": "refri.jpg"
         },
-        # Adicione mais itens conforme necessário
     ]
 }
 
@@ -43,18 +45,6 @@ def menu():
 def contato():
     return render_template('contato.html')
 
-#if __name__ == '__main__':
-#    port = int(os.environ.get('PORT', 5000))
-#    app.run(
-#        host='0.0.0.0',
-#        port=port,
-#        debug=os.environ.get('FLASK_DEBUG', False)
-
-#if __name__ == '__main__':
-# Configuração que funciona tanto local quanto no Render
-#    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 if __name__ == '__main__':
-    # Porta fixa para o Render (10000 é comum no plano free)
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
-
