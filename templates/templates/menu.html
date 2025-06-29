@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-5 text-warning">Nosso Cardápio</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="text-danger mb-4"><i class="fas fa-hamburger me-2"></i>Lanches</h2>
+        <div class="row">
+            {% for item in cardapio.lanches %}
+            <div class="col-md-6 mb-4">
+                <div class="card bg-secondary h-100">
+                    <img src="{{ url_for('static', filename='images/' + item.imagem) }}" class="card-img-top" alt="{{ item.nome }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">{{ item.nome }}</h5>
+                        <p class="card-text">{{ item.descricao }}</p>
+                    </div>
+                    <div class="card-footer bg-dark">
+                        <span class="fs-4 text-light">{{ item.preco }}</span>
+                        <button class="btn btn-danger float-end" onclick="pedirWhatsapp('{{ item.nome }}')">
+                            <i class="fab fa-whatsapp me-2"></i>Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <h2 class="text-primary mb-4"><i class="fas fa-glass-whiskey me-2"></i>Bebidas</h2>
+        <div class="row">
+            {% for item in cardapio.bebidas %}
+            <div class="col-md-6 mb-4">
+                <div class="card bg-secondary h-100">
+                    <img src="{{ url_for('static', filename='images/' + item.imagem) }}" class="card-img-top" alt="{{ item.nome }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ item.nome }}</h5>
+                        <p class="card-text">{{ item.descricao }}</p>
+                    </div>
+                    <div class="card-footer bg-dark">
+                        <span class="fs-4 text-light">{{ item.preco }}</span>
+                        <button class="btn btn-danger float-end" onclick="pedirWhatsapp('{{ item.nome }}')">
+                            <i class="fab fa-whatsapp me-2"></i>Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Chatbot Flutuante -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/5554991853581" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+{% endblock %}
