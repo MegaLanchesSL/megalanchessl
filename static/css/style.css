@@ -8,7 +8,13 @@
 
 
 body {
-    background-color: #1a1a1a; /* Um preto mais profundo para o fundo */
+    background-image: url('../images/logo.jpg'); /* Caminho para sua imagem */
+    background-repeat: no-repeat; /* Para não repetir a imagem */
+    background-size: cover; /* Para cobrir todo o fundo */
+    background-position: center center; /* Para centralizar a imagem */
+    background-attachment: fixed; /* Para manter a imagem fixa durante a rolagem */
+    background-color: #1a1a1a; /* Cor de fundo fallback caso a imagem não carregue */
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mantendo sua fonte */
     color: #f8f9fa; /* Branco para o texto principal */
 }
