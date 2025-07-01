@@ -27,13 +27,13 @@ cardapio = {
             "nome": "Mega Bacon",
             "descricao": "Pão, hambúrguer, queijo, bacon crocante e molho especial",
             "preco": "R$ 22,90",
-            "imagem": "bacon.jpg"
+            "imagem": "xbacon.jpg"
         },
     ],
     "bebidas": [
         {
-            "nome": "Refrigerante Lata",
-            "descricao": "Coca-Cola, Guaraná, Fanta Laranja",
+            "nome": "Refrigerante 200 ml",
+            "descricao": "Pepsi, Guaraná",
             "preco": "R$ 6,00",
             "imagem": "refri.jpg"
         },
