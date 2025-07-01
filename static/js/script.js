@@ -20,5 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
 //        const mensagem = "Olá Mega Lanches! Preciso de ajuda com meu pedido.";
 //        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 //        window.open(url, '_blank');
-    }
+//    }
 // }, 30000); // Abre após 30 segundos
