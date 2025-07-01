@@ -32,8 +32,8 @@ cardapio = {
     ],
     "bebidas": [
         {
-            "nome": "Refrigerante 200 ml",
-            "descricao": "Pepsi, Guaraná",
+            "nome": "Refrigerante Lata",
+            "descricao": "Coca-Cola, Guaraná, Fanta Laranja",
             "preco": "R$ 6,00",
             "imagem": "refri.jpg"
         },
