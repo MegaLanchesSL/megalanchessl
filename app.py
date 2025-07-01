@@ -104,10 +104,10 @@ cardapio = {
             "imagem": "xtudo.jpg" # Certifique-se de ter esta imagem na pasta static/images
         },
         {
-            "nome": "Mega Vegetariano",
-            "descricao": "Pão, hambúrguer vegetariano, queijo, alface, tomate, cebola roxa e molho verde",
-            "preco": "R$ 20,00",
-            "imagem": "xtudo.jpg" # Certifique-se de ter esta imagem na pasta static/images
+            "nome": "Mega Porção de Violinha",
+            "descricao": "violinha frita",
+            "preco": "R$ 55,00",
+            "imagem": "violinha.jpg" # Certifique-se de ter esta imagem na pasta static/images
         },
         # -----------------------
     ],
