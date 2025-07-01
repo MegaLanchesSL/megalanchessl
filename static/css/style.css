@@ -1,0 +1,209 @@
+body {
+    background-color: #1a1a1a; /* Um preto mais profundo para o fundo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mantendo sua fonte */
+    color: #f8f9fa; /* Branco para o texto principal */
+}
+
+/* Navbar - Vermelho vibrante para o cabeçalho */
+.navbar {
+    background-color: #e63946 !important; /* Um vermelho mais vivo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #f1faee !important; /* Branco off-white */
+}
+
+.nav-link {
+    color: #f1faee !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #a8dadc !important; /* Um azul/verde claro para hover */
+}
+
+/* Seções de destaque (Hero na página inicial) */
+.hero-section {
+    /* Você pode adicionar uma imagem de fundo aqui em static/images/hero-background.jpg */
+    /* Ex: background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background.jpg') no-repeat center center/cover; */
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f1faee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; /* Aumentar o tamanho do título */
+    color: #ffc107; /* Amarelo ouro para o título principal */
+}
+
+.hero-section p.lead {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+}
+
+/* Botões */
+.btn-danger {
+    background-color: #e63946; /* Vermelho vibrante */
+    border-color: #e63946;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #d62d3c; /* Um tom ligeiramente mais escuro no hover */
+    border-color: #d62d3c;
+    transform: translateY(-2px); /* Efeito de elevação sutil */
+}
+
+.btn-outline-warning {
+    color: #ffc107; /* Amarelo vibrante */
+    border-color: #ffc107;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #1a1a1a; /* Texto escuro no hover */
+    transform: translateY(-2px);
+}
+
+
+/* Cards (nosso cardápio, info boxes) */
+.card {
+    background-color: #343a40; /* Cinza escuro para os cards */
+    border: none; /* Removendo borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    transition: transform 0.3s; /* Mantendo sua transição */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Mantendo seu efeito de hover */
+}
+
+.card-img-top {
+    height: 200px; /* Altura fixa para as imagens dos lanches (ajustado de 180px para manter proporção) */
+    object-fit: cover; /* Recorta a imagem para preencher */
+    border-bottom: 2px solid #e63946; /* Linha de destaque vibrante */
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #a8dadc; /* Azul/verde claro para títulos de card */
+}
+
+.card-text {
+    color: #e0e0e0;
+}
+
+.card-footer {
+    background-color: #212529; /* Preto mais escuro para o rodapé do card */
+    border-top: 1px solid #495057;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span.fs-4 {
+    color: #f1faee; /* Preço em branco */
+    font-weight: bold;
+}
+
+/* Ícones e textos com cores de destaque */
+.fas, .fab {
+    color: #e63946; /* Cor vibrante para a maioria dos ícones */
+}
+
+.text-warning {
+    color: #ffc107 !important; /* Amarelo vibrante */
+}
+
+.text-danger {
+    color: #e63946 !important; /* Vermelho vibrante */
+}
+
+.text-primary {
+    color: #a8dadc !important; /* Azul/verde claro para bebidas */
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; /* Verde WhatsApp */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais definida */
+    z-index: 1000; /* Priorizado z-index para garantir que fique por cima */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Adicionado transição de hover */
+}
+
+.whatsapp-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E; /* Mantendo seu hover */
+    transform: scale(1.1); /* Efeito de escala no hover */
+}
+
+/* Efeitos para itens do cardápio (mantido suas regras, mas ajustado cor) */
+.menu-item {
+    border-left: 4px solid #ffc107; /* Amarelo vibrante */
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.price-badge {
+    font-size: 1.2rem;
+    background-color: #e63946; /* Vermelho vibrante */
+}
+
+/* Rodapé */
+footer {
+    background-color: #e63946 !important; /* Vermelho vibrante para o rodapé */
+    color: #f1faee !important;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p.lead {
+        font-size: 1.2rem;
+    }
+}
