@@ -1,3 +1,12 @@
+/* Adicione esta regra @font-face no INÍCIO do seu arquivo style.css */
+@font-face {
+    font-family: "ahkio"; /* Dê um nome para sua fonte */
+    src: url('../fonts/ahkio.ttf') format('truetype'); /* Caminho para seu arquivo .ttf e formato */
+    font-weight: normal; /* Defina o peso da fonte, se aplicável */
+    font-style: normal; /* Defina o estilo da fonte, se aplicável */
+}
+
+
 body {
     background-color: #1a1a1a; /* Um preto mais profundo para o fundo */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mantendo sua fonte */
@@ -13,6 +22,7 @@ body {
 .navbar-brand {
     font-weight: bold;
     color: #f1faee !important; /* Branco off-white */
+    font-family: "ahkio", sans-serif; /* APLICA A FONTE AQUI */
 }
 
 .nav-link {
@@ -26,8 +36,6 @@ body {
 
 /* Seções de destaque (Hero na página inicial) */
 .hero-section {
-    /* Você pode adicionar uma imagem de fundo aqui em static/images/hero-background.jpg */
-    /* Ex: background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background.jpg') no-repeat center center/cover; */
     min-height: 50vh;
     display: flex;
     align-items: center;
