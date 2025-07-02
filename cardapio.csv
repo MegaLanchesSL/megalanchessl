@@ -1,31 +1,31 @@
 produto,preco,descricao,foto,tipo
-TORRADA SEM OVO,"14,00","Maionese, tomate, alface, presunto, queijo, no pão de xis",fundo.jpg,lanche
-TORRADA COM OVO,"16,00","Maionese, tomate, alface, presunto, queijo, ovo, no pão de xis",fundo.jpg,lanche
-XIS BURGUER,"19,00","Maionese, tomate, alface, bife de carne moída, presunto, queijo, ovo",fundo.jpg,lanche
-XIS SALADA,"22,00","Maionese, milho, ervilha, tomate, alface, bife de carne moída, queijo, ovo",fundo.jpg,lanche
-XIS FRANGO,"25,00","Maionese, milho, ervilha, tomate, alface, frango desfiado, queijo, ovo",fundo.jpg,lanche
-XIS CALABRESA,"26,00","Maionese, milho, ervilha, tomate, alface, calabresa, queijo, ovo",fundo.jpg,lanche
-XIS SALADA DUPLO,"28,00","Maionese, milho, ervilha, tomate, alface, 2 bifes de carne moída, queijo, ovo",fundo.jpg,lanche
-XIS BACON,"29,00","Maionese, milho, ervilha, tomate, alface, bacon, queijo, ovo",fundo.jpg,lanche
-XIS CORAÇÃO,"29,00","Maionese, milho, ervilha, tomate, alface, coração, queijo, ovo",fundo.jpg,lanche
-XIS FRANGO COM BACON,"32,00","Maionese, milho, ervilha, tomate, alface, frango, bacon, queijo, ovo",fundo.jpg,lanche
-XIS A MODA DA CASA,"28,00","Maionese, tomate, alface, contra filé picado, queijo, ovo",fundo.jpg,lanche
-XIS TUDO,"33,00","Maionese, milho, ervilha, tomate, alface, coração, calabresa, bacon, frango, queijo, ovo",fundo.jpg,lanche
-XIS ENTREVERO,"34,99","Maionese, milho, ervilha, tomate, alface, carne bovina, suina, coração, frango, calabresa, queijo, ovo",xentrevero.jpg,lanche
-XIS COSTELA MOÍDA,"29,99","Maionese, milho, ervilha, tomate, alface, bife de 200g de costela moída, queijo, ovo",xcostela.jpg,lanche
-DOG SIMPLES,"14,00","Maionese, milho, ervilha, 1 salsicha, molho, batata palha.",fundo.jpg,lanche
-DOG DUPLO,"16,00","Maionese, milho, ervilha, 2 salsichas, molho, batata palha.",dog2.jpg,lanche
-DOG FRANGO,"17,00","Maionese, milho, ervilha, frango desfiado, molho, queijo, batata palha.",fundo.jpg,lanche
-DOG CALABRESA,"17,00","Maionese, milho, ervilha, calabresa, molho, queijo, batata palha.",fundo.jpg,lanche
-DOG BACON,"23,00","Maionese, milho, ervilha, bacon, molho, queijo, batata palha.",fundo.jpg,lanche
-DOG CORAÇÃO,"24,00","Maionese, milho, ervilha, coração, molho, queijo, batata palha.",fundo.jpg,lanche
-DOG CHOCOLATE,"15,00","Leite condensado, bombom Ouro Branco ou bombom Sonho de Valsa",fundo.jpg,lanche
-VIOLINHA COM FRITAS,"65,00",Violinha 500 gr e Batata Frita,fundo.jpg,lanche
-BATATA FRITA PEQUENA,"20,00",Batata Frita 350 gramas,fundo.jpg,lanche
-BATATA FRITA MÉDIA,"25,00",Batata Frita 550 gramas,fundo.jpg,lanche
-BATATA FRITA GRANDE,"30,00",Batata Frita 700 gramas,fundo.jpg,lanche
-BATATÃO PEQUENO,"35,00","Batata Frita, carne, calabresa, queijo. (Serve 1 pessoa)",fundo.jpg,lanche
-BATATÃO GRANDE,"65,00","Batata Frita, carne, calabresa, queijos (Serve 2 pessoas)",fundo.jpg,lanche
+TORRADA SEM OVO,"14,00","Maionese, tomate, alface, presunto, queijo, no pão de xis",fundo.jpg,lanches
+TORRADA COM OVO,"16,00","Maionese, tomate, alface, presunto, queijo, ovo, no pão de xis",fundo.jpg,lanches
+XIS BURGUER,"19,00","Maionese, tomate, alface, bife de carne moída, presunto, queijo, ovo",fundo.jpg,lanches
+XIS SALADA,"22,00","Maionese, milho, ervilha, tomate, alface, bife de carne moída, queijo, ovo",fundo.jpg,lanches
+XIS FRANGO,"25,00","Maionese, milho, ervilha, tomate, alface, frango desfiado, queijo, ovo",fundo.jpg,lanches
+XIS CALABRESA,"26,00","Maionese, milho, ervilha, tomate, alface, calabresa, queijo, ovo",fundo.jpg,lanches
+XIS SALADA DUPLO,"28,00","Maionese, milho, ervilha, tomate, alface, 2 bifes de carne moída, queijo, ovo",fundo.jpg,lanches
+XIS BACON,"29,00","Maionese, milho, ervilha, tomate, alface, bacon, queijo, ovo",fundo.jpg,lanches
+XIS CORAÇÃO,"29,00","Maionese, milho, ervilha, tomate, alface, coração, queijo, ovo",fundo.jpg,lanches
+XIS FRANGO COM BACON,"32,00","Maionese, milho, ervilha, tomate, alface, frango, bacon, queijo, ovo",fundo.jpg,lanches
+XIS A MODA DA CASA,"28,00","Maionese, tomate, alface, contra filé picado, queijo, ovo",fundo.jpg,lanches
+XIS TUDO,"33,00","Maionese, milho, ervilha, tomate, alface, coração, calabresa, bacon, frango, queijo, ovo",fundo.jpg,lanches
+XIS ENTREVERO,"34,99","Maionese, milho, ervilha, tomate, alface, carne bovina, suina, coração, frango, calabresa, queijo, ovo",xentrevero.jpg,lanches
+XIS COSTELA MOÍDA,"29,99","Maionese, milho, ervilha, tomate, alface, bife de 200g de costela moída, queijo, ovo",xcostela.jpg,lanches
+DOG SIMPLES,"14,00","Maionese, milho, ervilha, 1 salsicha, molho, batata palha.",fundo.jpg,lanches
+DOG DUPLO,"16,00","Maionese, milho, ervilha, 2 salsichas, molho, batata palha.",dog2.jpg,lanches
+DOG FRANGO,"17,00","Maionese, milho, ervilha, frango desfiado, molho, queijo, batata palha.",fundo.jpg,lanches
+DOG CALABRESA,"17,00","Maionese, milho, ervilha, calabresa, molho, queijo, batata palha.",fundo.jpg,lanches
+DOG BACON,"23,00","Maionese, milho, ervilha, bacon, molho, queijo, batata palha.",fundo.jpg,lanches
+DOG CORAÇÃO,"24,00","Maionese, milho, ervilha, coração, molho, queijo, batata palha.",fundo.jpg,lanches
+DOG CHOCOLATE,"15,00","Leite condensado, bombom Ouro Branco ou bombom Sonho de Valsa",fundo.jpg,lanches
+VIOLINHA COM FRITAS,"65,00",Violinha 500 gr e Batata Frita,fundo.jpg,lanches
+BATATA FRITA PEQUENA,"20,00",Batata Frita 350 gramas,fundo.jpg,lanches
+BATATA FRITA MÉDIA,"25,00",Batata Frita 550 gramas,fundo.jpg,lanches
+BATATA FRITA GRANDE,"30,00",Batata Frita 700 gramas,fundo.jpg,lanches
+BATATÃO PEQUENO,"35,00","Batata Frita, carne, calabresa, queijo. (Serve 1 pessoa)",fundo.jpg,lanches
+BATATÃO GRANDE,"65,00","Batata Frita, carne, calabresa, queijos (Serve 2 pessoas)",fundo.jpg,lanches
 PORÇÃO DE VIOLINHA,"55,00","10 anéis de cebola, e 500 de violinha",violinha.jpg,lanches
 REFRI 200 ml,"5,00",Pepsi e Guaraná,refri.jpg,bebida
 COMBO DOG,"65,00",2 Dog Duplo e dois refri 200,fundo.jpg,bebida
