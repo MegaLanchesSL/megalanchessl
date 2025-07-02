@@ -142,6 +142,8 @@ body {
 
 .text-warning {
     color: #ffc107 !important; /* Amarelo vibrante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
 }
 
 .text-danger {
