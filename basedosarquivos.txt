@@ -1,4 +1,4 @@
-megalanches-saoleo/
+megalanchessl/
 ├── app.py                # Aplicação Flask principal
 ├── requirements.txt      # Dependências do Python
 ├── static/

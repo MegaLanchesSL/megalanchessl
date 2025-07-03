@@ -121,6 +121,7 @@ body {
 
 .card-text {
     color: #e0e0e0;
+    
 }
 
 .card-footer {
@@ -150,6 +151,8 @@ body {
 
 .text-danger {
     color: #e63946 !important; /* Vermelho vibrante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
 }
 
 .text-primary {
@@ -229,3 +232,67 @@ footer {
         font-size: 1.2rem;
     }
 }
+.whatsapp-float .fab {
+    color: white !important;
+}
+.btn-danger .fab,
+.btn-danger .fas {
+    color: white !important;
+}
+
+/* Botão flutuante com número ao lado */
+.whatsapp-float.with-number {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px 10px;
+    background-color: #25d366;
+    border-radius: 40px;
+    width: auto;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float.with-number .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.whatsapp-number {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Responsivo com número */
+@media (max-width: 768px) {
+    .whatsapp-float.with-number {
+        bottom: 20px;
+        right: 20px;
+        height: 50px;
+        padding: 4px 8px;
+    }
+
+    .whatsapp-float.with-number .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .whatsapp-number {
+        font-size: 14px;
+    }
+}
+
