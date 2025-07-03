@@ -7,39 +7,14 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label class="form-label">Item</label>
-            <select class="form-select" id="item-select">
-                <option value="">Selecione um item</option>
-                <option value="TORRADA SEM OVO" data-preco="14.00">TORRADA SEM OVO - R$ 14,00</option>
-<option value="TORRADA COM OVO" data-preco="16.00">TORRADA COM OVO - R$ 16,00</option>
-<option value="XIS BURGUER" data-preco="19.00">XIS BURGUER - R$ 19,00</option>
-<option value="XIS SALADA" data-preco="22.00">XIS SALADA - R$ 22,00</option>
-<option value="XIS FRANGO" data-preco="25.00">XIS FRANGO - R$ 25,00</option>
-<option value="XIS CALABRESA" data-preco="26.00">XIS CALABRESA - R$ 26,00</option>
-<option value="XIS SALADA DUPLO" data-preco="28.00">XIS SALADA DUPLO - R$ 28,00</option>
-<option value="XIS BACON" data-preco="29.00">XIS BACON - R$ 29,00</option>
-<option value="XIS CORAÇÃO" data-preco="29.00">XIS CORAÇÃO - R$ 29,00</option>
-<option value="XIS FRANGO COM BACON" data-preco="32.00">XIS FRANGO COM BACON - R$ 32,00</option>
-<option value="XIS A MODA DA CASA" data-preco="28.00">XIS A MODA DA CASA - R$ 28,00</option>
-<option value="XIS TUDO" data-preco="33.00">XIS TUDO - R$ 33,00</option>
-<option value="XIS ENTREVERO" data-preco="34.99">XIS ENTREVERO - R$ 34,99</option>
-<option value="XIS COSTELA MOÍDA" data-preco="29.99">XIS COSTELA MOÍDA - R$ 29,99</option>
-<option value="DOG SIMPLES" data-preco="14.00">DOG SIMPLES - R$ 14,00</option>
-<option value="DOG DUPLO" data-preco="16.00">DOG DUPLO - R$ 16,00</option>
-<option value="DOG FRANGO" data-preco="17.00">DOG FRANGO - R$ 17,00</option>
-<option value="DOG CALABRESA" data-preco="17.00">DOG CALABRESA - R$ 17,00</option>
-<option value="DOG BACON" data-preco="23.00">DOG BACON - R$ 23,00</option>
-<option value="DOG CORAÇÃO" data-preco="24.00">DOG CORAÇÃO - R$ 24,00</option>
-<option value="DOG CHOCOLATE" data-preco="15.00">DOG CHOCOLATE - R$ 15,00</option>
-<option value="VIOLINHA COM FRITAS" data-preco="65.00">VIOLINHA COM FRITAS - R$ 65,00</option>
-<option value="BATATA FRITA PEQUENA" data-preco="20.00">BATATA FRITA PEQUENA - R$ 20,00</option>
-<option value="BATATA FRITA MÉDIA" data-preco="25.00">BATATA FRITA MÉDIA - R$ 25,00</option>
-<option value="BATATA FRITA GRANDE" data-preco="30.00">BATATA FRITA GRANDE - R$ 30,00</option>
-<option value="BATATÃO PEQUENO" data-preco="35.00">BATATÃO PEQUENO - R$ 35,00</option>
-<option value="BATATÃO GRANDE" data-preco="65.00">BATATÃO GRANDE - R$ 65,00</option>
-<option value="PORÇÃO DE VIOLINHA" data-preco="55.00">PORÇÃO DE VIOLINHA - R$ 55,00</option>
-<option value="REFRI 200 ml" data-preco="3.00">REFRI 200 ml - R$ 3,00</option>
-<option value="COMBO DOG" data-preco="65.00">COMBO DOG - R$ 65,00</option>
-            </select>
+			<select class="form-select" id="item-select">
+				<option value="">Selecione um item</option>
+				{% for item in cardapio.lanches + cardapio.bebidas %}
+					<option value="{{ item.nome }}" data-preco="{{ item.preco.replace('R$', '').replace(',', '.') }}">
+						{{ item.nome }} - {{ item.preco }}
+					</option>
+				{% endfor %}
+			</select>
         </div>
         <div class="col-md-3">
             <label class="form-label">Quantidade</label>
