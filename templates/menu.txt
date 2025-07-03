@@ -17,9 +17,9 @@
                     </div>
                     <div class="card-footer bg-dark">
                         <span class="fs-4 text-light">{{ item.preco }}</span>
-						<a href="{{ url_for('pedidos') }}?item={{ item.nome | urlencode }}" class="btn btn-danger float-end">
-							<i class="fab fa-whatsapp me-2"></i>Pedir
-						</a>
+                        <button class="btn btn-danger float-end" onclick="pedirWhatsapp('{{ item.nome }}')">
+                            <i class="fab fa-whatsapp me-2"></i>Pedir
+                        </button>
                     </div>
                 </div>
             </div>

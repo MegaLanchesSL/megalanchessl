@@ -1,14 +1,21 @@
 megalanchessl/
 ├── app.py                # Aplicação Flask principal
 ├── requirements.txt      # Dependências do Python
+├── cardapio.csv          # base de dados preço e produtos
+├── app.py                # Aplicação Flask principal
+
 ├── static/
 │   ├── css/
 │   │   └── style.css     # Estilos CSS personalizados
 │   ├── images/           # Imagens do cardápio
 │   └── js/
 │       └── script.js     # JavaScript para interações
+│   └── fonts/
+│       └── ahkio.ttf     # fonte 
+
 └── templates/
     ├── base.html         # Template base
     ├── index.html        # Página inicial
     ├── menu.html         # Página do cardápio
     └── contato.html      # Página de contato
+    └── pedidos.html      # Página de pedido
