@@ -97,7 +97,7 @@ def debug():
 
 @app.route("/pedidos", methods=["GET"])
 def pedidos():
-    return render_template("pedidos.html")
+    return render_template("pedidos.html", cardapio=cardapio)
 
 from flask import request, jsonify
 
