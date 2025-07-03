@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Fazer Pedido</h2>
+    <form id="pedido-form">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone" required>
+        </div>
+        <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="endereco" name="endereco" required>
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição do pedido</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="4" required>{{ request.args.get('item', '') }}</textarea>
+        </div>
+        <button type="button" class="btn btn-success" onclick="enviarPedido()">Enviar Pedido</button>
+    </form>
+</div>
+
+<script>
+function enviarPedido() {
+    const nome = document.getElementById('nome').value;
+    const telefone = document.getElementById('telefone').value;
+    const endereco = document.getElementById('endereco').value;
+    const descricao = document.getElementById('descricao').value;
+
+    const dados = {
+        nome,
+        telefone,
+        endereco,
+        descricao
+    };
+
+    // Salva no servidor (Flask)
+    fetch("/enviar-pedido", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Pedido salvo com sucesso! Agora vamos para o WhatsApp.");
+
+            const mensagem = `*Pedido Mega Lanches São Léo*\n\n` +
+                             `👤 Nome: ${nome}\n` +
+                             `📞 Telefone: ${telefone}\n` +
+                             `🏠 Endereço: ${endereco}\n` +
+                             `📝 Pedido: ${descricao}`;
+
+            const link = `https://wa.me/5554991853581?text=${encodeURIComponent(mensagem)}`;
+            window.open(link, '_blank');
+        } else {
+            alert("Erro ao enviar o pedido.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        alert("Erro ao salvar o pedido.");
+    });
+}
+</script>
+{% endblock %}

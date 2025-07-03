@@ -3,68 +3,153 @@
 {% block content %}
 <div class="container mt-5">
     <h2 class="mb-4 text-center">Fazer Pedido</h2>
-    <form id="pedido-form">
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">Item</label>
+            <select class="form-select" id="item-select">
+                <option value="">Selecione um item</option>
+                <option value="TORRADA SEM OVO" data-preco="14.00">TORRADA SEM OVO - R$ 14,00</option>
+<option value="TORRADA COM OVO" data-preco="16.00">TORRADA COM OVO - R$ 16,00</option>
+<option value="XIS BURGUER" data-preco="19.00">XIS BURGUER - R$ 19,00</option>
+<option value="XIS SALADA" data-preco="22.00">XIS SALADA - R$ 22,00</option>
+<option value="XIS FRANGO" data-preco="25.00">XIS FRANGO - R$ 25,00</option>
+<option value="XIS CALABRESA" data-preco="26.00">XIS CALABRESA - R$ 26,00</option>
+<option value="XIS SALADA DUPLO" data-preco="28.00">XIS SALADA DUPLO - R$ 28,00</option>
+<option value="XIS BACON" data-preco="29.00">XIS BACON - R$ 29,00</option>
+<option value="XIS CORAÇÃO" data-preco="29.00">XIS CORAÇÃO - R$ 29,00</option>
+<option value="XIS FRANGO COM BACON" data-preco="32.00">XIS FRANGO COM BACON - R$ 32,00</option>
+<option value="XIS A MODA DA CASA" data-preco="28.00">XIS A MODA DA CASA - R$ 28,00</option>
+<option value="XIS TUDO" data-preco="33.00">XIS TUDO - R$ 33,00</option>
+<option value="XIS ENTREVERO" data-preco="34.99">XIS ENTREVERO - R$ 34,99</option>
+<option value="XIS COSTELA MOÍDA" data-preco="29.99">XIS COSTELA MOÍDA - R$ 29,99</option>
+<option value="DOG SIMPLES" data-preco="14.00">DOG SIMPLES - R$ 14,00</option>
+<option value="DOG DUPLO" data-preco="16.00">DOG DUPLO - R$ 16,00</option>
+<option value="DOG FRANGO" data-preco="17.00">DOG FRANGO - R$ 17,00</option>
+<option value="DOG CALABRESA" data-preco="17.00">DOG CALABRESA - R$ 17,00</option>
+<option value="DOG BACON" data-preco="23.00">DOG BACON - R$ 23,00</option>
+<option value="DOG CORAÇÃO" data-preco="24.00">DOG CORAÇÃO - R$ 24,00</option>
+<option value="DOG CHOCOLATE" data-preco="15.00">DOG CHOCOLATE - R$ 15,00</option>
+<option value="VIOLINHA COM FRITAS" data-preco="65.00">VIOLINHA COM FRITAS - R$ 65,00</option>
+<option value="BATATA FRITA PEQUENA" data-preco="20.00">BATATA FRITA PEQUENA - R$ 20,00</option>
+<option value="BATATA FRITA MÉDIA" data-preco="25.00">BATATA FRITA MÉDIA - R$ 25,00</option>
+<option value="BATATA FRITA GRANDE" data-preco="30.00">BATATA FRITA GRANDE - R$ 30,00</option>
+<option value="BATATÃO PEQUENO" data-preco="35.00">BATATÃO PEQUENO - R$ 35,00</option>
+<option value="BATATÃO GRANDE" data-preco="65.00">BATATÃO GRANDE - R$ 65,00</option>
+<option value="PORÇÃO DE VIOLINHA" data-preco="55.00">PORÇÃO DE VIOLINHA - R$ 55,00</option>
+<option value="REFRI 200 ml" data-preco="3.00">REFRI 200 ml - R$ 3,00</option>
+<option value="COMBO DOG" data-preco="65.00">COMBO DOG - R$ 65,00</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Quantidade</label>
+            <input type="number" class="form-control" id="quantidade" value="1" min="1">
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="button" class="btn btn-primary w-100" onclick="adicionarItem()">Adicionar Item</button>
+        </div>
+    </div>
+
+    <h4>Itens do Pedido:</h4>
+    <table class="table table-dark table-bordered" id="itens-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qtd</th>
+                <th>Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h5 class="text-end">Total: R$ <span id="total-geral">0.00</span></h5>
+
+    <form id="pedido-form" class="mt-4">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" required>
+            <input type="text" class="form-control" id="nome" required>
         </div>
         <div class="mb-3">
             <label for="telefone" class="form-label">Telefone</label>
-            <input type="tel" class="form-control" id="telefone" name="telefone" required>
+            <input type="tel" class="form-control" id="telefone" required>
         </div>
         <div class="mb-3">
             <label for="endereco" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" required>
+            <input type="text" class="form-control" id="endereco" required>
         </div>
         <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição do pedido</label>
-            <textarea class="form-control" id="descricao" name="descricao" rows="4" required>{{ request.args.get('item', '') }}</textarea>
+            <label for="mensagem" class="form-label">Mensagem adicional</label>
+            <textarea class="form-control" id="mensagem" rows="3"></textarea>
         </div>
         <button type="button" class="btn btn-success" onclick="enviarPedido()">Enviar Pedido</button>
     </form>
 </div>
 
 <script>
+let total = 0;
+let itens = [];
+
+function adicionarItem() {
+    const select = document.getElementById('item-select');
+    const qtd = parseInt(document.getElementById('quantidade').value);
+    const preco = parseFloat(select.selectedOptions[0].dataset.preco);
+    const nome = select.value;
+
+    if (!nome || qtd < 1) return;
+
+    const totalItem = qtd * preco;
+    total += totalItem;
+
+    itens.push({ nome, qtd, preco, totalItem });
+
+    const tbody = document.querySelector('#itens-table tbody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${nome}</td>
+        <td>${qtd}</td>
+        <td>R$ ${preco.toFixed(2)}</td>
+        <td>R$ ${totalItem.toFixed(2)}</td>
+    `;
+    tbody.appendChild(row);
+
+    document.getElementById('total-geral').textContent = total.toFixed(2);
+}
+
 function enviarPedido() {
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
     const endereco = document.getElementById('endereco').value;
-    const descricao = document.getElementById('descricao').value;
+    const mensagem = document.getElementById('mensagem').value;
 
-    const dados = {
-        nome,
-        telefone,
-        endereco,
-        descricao
-    };
+    if (!nome || !telefone || !endereco || itens.length === 0) {
+        alert("Preencha todos os campos e adicione ao menos um item.");
+        return;
+    }
 
-    // Salva no servidor (Flask)
+    const resumo = itens.map(item => `• ${item.qtd}x ${item.nome} (R$ ${item.totalItem.toFixed(2)})`).join('\n');
+    const texto = `*Pedido Mega Lanches São Léo*\n\n` +
+                  `👤 Nome: ${nome}\n` +
+                  `📞 Telefone: ${telefone}\n` +
+                  `🏠 Endereço: ${endereco}\n\n` +
+                  `📝 Itens:\n${resumo}\n\n` +
+                  `💬 Mensagem: ${mensagem}\n` +
+                  `💰 Total: R$ ${total.toFixed(2)}`;
+
+    // salvar no servidor
     fetch("/enviar-pedido", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(dados)
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("Pedido salvo com sucesso! Agora vamos para o WhatsApp.");
-
-            const mensagem = `*Pedido Mega Lanches São Léo*\n\n` +
-                             `👤 Nome: ${nome}\n` +
-                             `📞 Telefone: ${telefone}\n` +
-                             `🏠 Endereço: ${endereco}\n` +
-                             `📝 Pedido: ${descricao}`;
-
-            const link = `https://wa.me/5554991853581?text=${encodeURIComponent(mensagem)}`;
-            window.open(link, '_blank');
+        body: JSON.stringify({ nome, telefone, endereco, itens, mensagem, total })
+    }).then(r => {
+        if (r.ok) {
+            alert("Pedido salvo! Agora vamos para o WhatsApp.");
+            window.open(`https://wa.me/5554991853581?text=${encodeURIComponent(texto)}`, '_blank');
         } else {
-            alert("Erro ao enviar o pedido.");
+            alert("Erro ao salvar pedido.");
         }
-    })
-    .catch(error => {
-        console.error("Erro:", error);
-        alert("Erro ao salvar o pedido.");
     });
 }
 </script>

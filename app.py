@@ -1,6 +1,7 @@
 import csv
-from flask import Flask, render_template
 import os
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+
 
 # Configuração com verificação explícita
 base_dir = os.path.abspath(os.path.dirname(__file__))
