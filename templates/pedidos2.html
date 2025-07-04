@@ -7,14 +7,14 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label class="form-label">Item</label>
-            <select class="form-select" id="item-select">
-                <option value="">Selecione um item</option>
-                {% for item in cardapio.lanches + cardapio.bebidas %}
-                    <option value="{{ item.nome }}" data-preco="{{ item.preco.replace('R$', '').replace(',', '.') }}">
-                        {{ item.nome }} - {{ item.preco }}
-                    </option>
-                {% endfor %}
-            </select>
+			<select class="form-select" id="item-select">
+				<option value="">Selecione um item</option>
+				{% for item in cardapio.lanches + cardapio.bebidas %}
+					<option value="{{ item.nome }}" data-preco="{{ item.preco.replace('R$', '').replace(',', '.') }}">
+						{{ item.nome }} - {{ item.preco }}
+					</option>
+				{% endfor %}
+			</select>
         </div>
         <div class="col-md-3">
             <label class="form-label">Quantidade</label>
@@ -59,14 +59,14 @@
             <textarea class="form-control" id="mensagem" rows="3"></textarea>
         </div>
         <div class="mb-3">
-            <label class="form-label">Forma de Pagamento</label>
-            <select class="form-select" id="pagamento" required>
-                <option value="">Selecione</option>
-                <option value="Pix">Pix</option>
-                <option value="Cartão">Cartão</option>
-                <option value="Dinheiro">Dinheiro</option>
-            </select>
-        </div>
+    <label class="form-label">Forma de Pagamento</label>
+    <select class="form-select" id="pagamento" required>
+        <option value="">Selecione</option>
+        <option value="Pix">Pix</option>
+        <option value="Cartão">Cartão</option>
+        <option value="Dinheiro">Dinheiro</option>
+    </select>
+</div>
         <button type="button" class="btn btn-success" onclick="enviarPedido()">Enviar Pedido</button>
     </form>
 </div>
@@ -80,7 +80,7 @@ function adicionarItem() {
     const qtd = parseInt(document.getElementById('quantidade').value);
     const preco = parseFloat(select.selectedOptions[0].dataset.preco);
     const nome = select.value;
-
+    
     if (!nome || qtd < 1) return;
 
     const totalItem = qtd * preco;
@@ -90,26 +90,32 @@ function adicionarItem() {
 
     const tbody = document.querySelector('#itens-table tbody');
     const row = document.createElement('tr');
-    const index = itens.length - 1;
-    row.innerHTML = `
-        <td>${nome}</td>
-        <td>${qtd}</td>
-        <td>R$ ${preco.toFixed(2)}</td>
-        <td>R$ ${totalItem.toFixed(2)}</td>
-        <td><button class="btn btn-sm btn-danger" onclick="removerItem(${index}, this)">Remover</button></td>
-    `;
+	const index = itens.length - 1;
+	row.innerHTML = `
+		<td>${nome}</td>
+		<td>${qtd}</td>
+		<td>R$ ${preco.toFixed(2)}</td>
+		<td>R$ ${totalItem.toFixed(2)}</td>
+		<td><button class="btn btn-sm btn-danger" onclick="removerItem(${index}, this)">Remover</button></td>
+`;
+function removerItem(index, botao) {
+    total -= itens[index].totalItem;
+    itens.splice(index, 1); // remove do array
+
+    // remove visualmente da tabela
+    const row = botao.closest('tr');
+    row.remove();
+
+    // atualiza total
+    document.getElementById('total-geral').textContent = total.toFixed(2);
+}
+
     tbody.appendChild(row);
 
     document.getElementById('total-geral').textContent = total.toFixed(2);
-    select.value = "";
-    document.getElementById("quantidade").value = 1;
-}
+	select.value = ""; // limpa o item selecionado
+	document.getElementById("quantidade").value = 1; // reseta quantidade
 
-function removerItem(index, botao) {
-    total -= itens[index].totalItem;
-    itens.splice(index, 1);
-    botao.closest('tr').remove();
-    document.getElementById('total-geral').textContent = total.toFixed(2);
 }
 
 function enviarPedido() {
@@ -118,11 +124,11 @@ function enviarPedido() {
     const endereco = document.getElementById('endereco').value;
     const mensagem = document.getElementById('mensagem').value;
     const pagamento = document.getElementById('pagamento').value;
-
     if (!pagamento) {
-        alert("Escolha uma forma de pagamento.");
-        return;
-    }
+		alert("Escolha uma forma de pagamento.");
+		return;
+}
+
 
     if (!nome || !telefone || !endereco || itens.length === 0) {
         alert("Preencha todos os campos e adicione ao menos um item.");
@@ -139,6 +145,8 @@ function enviarPedido() {
                   `💳 Pagamento: ${pagamento}\n` +
                   `💰 Total: R$ ${total.toFixed(2)}`;
 
+
+    // salvar no servidor
     fetch("/enviar-pedido", {
         method: "POST",
         headers: {
