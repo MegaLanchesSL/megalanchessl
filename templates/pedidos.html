@@ -1,12 +1,13 @@
+
 {% extends "base.html" %}
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Fazer Pedido</h2>
+    <h2 class="mb-4 text-center text-warning">Fazer Pedido</h2>
 
     <div class="row mb-3">
         <div class="col-md-6">
-            <label class="form-label">Item</label>
+            <label class="form-label" style="text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">Item</label>
             <select class="form-select" id="item-select">
                 <option value="">Selecione um item</option>
                 {% for item in cardapio.lanches + cardapio.bebidas %}
@@ -59,13 +60,19 @@
             <textarea class="form-control" id="mensagem" rows="3"></textarea>
         </div>
         <div class="mb-3">
-            <label class="form-label">Forma de Pagamento</label>
-            <select class="form-select" id="pagamento" required>
-                <option value="">Selecione</option>
-                <option value="Pix">Pix</option>
-                <option value="Cartão">Cartão</option>
-                <option value="Dinheiro">Dinheiro</option>
-            </select>
+            <label class="form-label d-block">Forma de Pagamento</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pagamento" id="pix" value="Pix">
+                <label class="form-check-label" for="pix">Pix</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pagamento" id="dinheiro" value="Dinheiro">
+                <label class="form-check-label" for="dinheiro">Dinheiro</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pagamento" id="cartao" value="Cartão">
+                <label class="form-check-label" for="cartao">Cartão</label>
+            </div>
         </div>
         <button type="button" class="btn btn-success" onclick="enviarPedido()">Enviar Pedido</button>
     </form>
@@ -117,7 +124,7 @@ function enviarPedido() {
     const telefone = document.getElementById('telefone').value;
     const endereco = document.getElementById('endereco').value;
     const mensagem = document.getElementById('mensagem').value;
-    const pagamento = document.getElementById('pagamento').value;
+    const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value;
 
     if (!pagamento) {
         alert("Escolha uma forma de pagamento.");
@@ -156,3 +163,4 @@ function enviarPedido() {
 }
 </script>
 {% endblock %}
+
