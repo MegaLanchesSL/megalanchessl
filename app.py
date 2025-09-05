@@ -123,5 +123,23 @@ def enviar_pedido():
         print("Erro ao salvar pedido:", e)
         return jsonify({"erro": "Erro ao salvar o pedido"}), 500
 
+@app.after_request
+def add_security_headers(response):
+    # Protege contra clickjacking
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['Content-Security-Policy'] = "frame-ancestors 'none'"
+
+    # Impede que navegadores interpretem tipos incorretos de arquivos
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+
+    # Proteção básica contra XSS
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+
+    # Força HTTPS (se estiver servindo em HTTPS)
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+
+    return response
+
+
 if __name__ == '__main__':
     app.run(debug=True)
